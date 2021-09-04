@@ -1,3 +1,19 @@
+provider "azurerm" {
+  features {}
+  skip_provider_registration = "true"
+}
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "RG_BASE"
+    storage_account_name = "strgbase7061"
+    container_name       = "tfstate"
+    key                  = "func.terraform.tfstate"
+  }
+} 
+
+
+
 resource "azurerm_resource_group" "rg" {
   name     = "rg-${var.app_name}"
   location = var.loc
