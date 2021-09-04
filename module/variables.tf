@@ -1,6 +1,6 @@
 variable "app_name" {
   description = "application name"
-  default     = "dockerapp"
+  default     = "rohitdockerapp"
 }
 
 variable "env_name" {
