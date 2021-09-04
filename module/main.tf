@@ -10,7 +10,7 @@ terraform {
     container_name       = "tfstate"
     key                  = "func.terraform.tfstate"
   }
-} 
+}
 
 
 
@@ -45,6 +45,7 @@ resource "azurerm_container_registry" "registry" {
 output "admin_password" {
   value       = azurerm_container_registry.registry.admin_password
   description = "The object ID of the user"
+  sensitive   = true
 }
 
 resource "azurerm_storage_account" "storage" {
